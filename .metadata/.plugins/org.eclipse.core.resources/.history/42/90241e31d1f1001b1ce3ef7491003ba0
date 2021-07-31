@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>All Users</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="signout" />
+			</form>
+			<div>
+				<p>
+					zzzWelcome: <span sec:authentication="principal.fullName">Fullname</span>
+					<span sec:authentication="principal.authorities">Roles</span>
+				</p>
+
+			</div>
+		</div>
+		<div>
+			<h1>List All Users</h1>
+		</div>
+		<div>
+			<table class="table-striped table-bodered container text-center">
+				<thead class="thead-dark">
+					<tr>
+						<th>User Id</th>
+						<th>Email</th>
+						<th>first Name</th>
+						<th>Last Name</th>
+						<th>Roles</th>
+						<th></th>
+						
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="user: ${listUsers}">
+						<td th:text="${user.id}">User ID</td>
+						<td th:text="${user.email}">Email</td>
+						<td th:text="${user.firstName}">First Name</td>
+						<td th:text="${user.lastName}">Last Name</td>
+						<td th:text="${user.roles}">Roles</td>
+					    <td><a th:href="@{'/users/edit/' + ${user.id}}">Edit</a></td>
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

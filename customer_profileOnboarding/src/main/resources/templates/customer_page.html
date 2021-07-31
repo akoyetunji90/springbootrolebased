@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Success Page</title>
+
+<style type="text/css">
+span {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<div class="main-block">
+		<div>
+			<h1>You Have Registered Successfully</h1>
+			<div>
+					<h3><a href="/loan/page">Go to My Account Profile</a></h3>
+					<h3><a href="/loan/new">Apply for loan</a></h3>
+			
+			</div>
+			
+		</div>
+
+		<fieldset>
+			<legend>Personal Details</legend>
+			<div>
+				<span>First Name: </span><span th:text="${user.firstname}"></span><br />
+				<span>Last Name: </span><span th:text="${user.lastname}"></span><br />
+				<span>BirthDate: </span><span th:text="${user.birthdate}"></span><br />
+				<span>Residential Address: </span><span th:text="${user.address}"></span><br />
+				 <span>Phone Number: </span><span th:text="${user.phonenumber}"></span><br />
+				   <span>Married?: </span><span th:text="${user.married}"></span><br />
+				    <span>Gender?: </span><span th:text="${user.gender}"></span><br />
+				    <span>Email?: </span><span th:text="${user.email}"></span><br />
+				     <span>State Of Origin?: </span><span th:text="${user.stateoforigin}"></span><br />
+				     <span>State Of Residence?: </span><span th:text="${user.stateofresidence}"></span><br />
+				     
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Work Details</legend>
+			<div>
+				<span>Enlistment Date: </span><span th:text="${user.enlistmentdate}"></span><br />
+				<span>Designation: </span><span th:text="${user.designation}"></span><br />
+				<span>BVN Number: </span><span th:text="${user.bvnnumber}"></span><br />
+				<span>IPPIS Number: </span><span th:text="${user.ippisnumber}"></span><br />
+
+
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Terms And Mailing</legend>
+			<div>
+				<span>Terms And Condition: </span><span th:text="${user.terms}"></span><br /> 
+				<span>Mailing:</span><span th:text="${user.mailing}"></span><br />
+				
+
+			</div>
+		</fieldset>
+
+	</div>
+</body>
+</html>

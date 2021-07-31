@@ -1,0 +1,19 @@
+package com.zeedlabs.ldap.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class UserServiceImplTest {
+
+	@Test
+	void testFindAll() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindOne() {
+		fail("Not yet implemented");
+	}
+
+}

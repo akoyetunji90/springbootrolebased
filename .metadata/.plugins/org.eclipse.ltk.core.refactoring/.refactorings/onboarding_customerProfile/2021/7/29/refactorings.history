@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;onboarding_customerProfile/src/main/resources/templates/register_form.html&apos; to &apos;customer_form.html&apos;" description="Rename resource &apos;register_form.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/register_form.html" name="customer_form.html" stamp="1626510775377" updateReferences="true"/>
+</session>

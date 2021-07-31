@@ -1,0 +1,5 @@
+package com.zeedlabs.productmanager.crud;
+
+public class WebSecurityConfiguration {
+
+}

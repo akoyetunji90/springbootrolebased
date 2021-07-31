@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customers List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<div>
+			<h1>Account Officers List</h1>
+		</div>
+		
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Phone Number</th>
+						<th>Street</th>
+						<th>City</th>
+					    <th>State Of Origin</th>
+					    <th>Gender</th>
+						<th>Married</th>
+						
+							<th>Employment Date</th>
+							<th>Retirement Date</th>
+							<th>Designation</th>
+						    <th>Official Email</th>
+						    					
+						<th></th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="officer : ${listOfficers}">
+
+						<tr>
+							<td>[[${officer.id}]]</td>
+							<td>[[${officer.firstname}]]</td>
+							<td>[[${officer.lastname}]]</td>
+							<td>[[${officer.phonenumber}]]</td>
+						    <td>[[${officer.street}]]</td>
+						    <td>[[${officer.city}]]</td>
+						    <td>[[${officer.stateoforigin}]]</td>
+						    <td>[[${officer.gender}]]</td>
+							<td>[[${officer.married}]]</td>
+							
+						    <td>[[${officer.employmentdate}]]</td>
+							<td>[[${officer.retirementdate}]]</td>
+							<td>[[${officer.designation}]]</td>
+						    <td>[[${officer.email}]]</td>
+						    
+							<td><a th:href="@{'/officer/edit/' +${officer.id}}">Edit</a>
+							</td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

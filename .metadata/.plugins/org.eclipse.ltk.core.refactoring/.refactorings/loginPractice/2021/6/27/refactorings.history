@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserServices.java&apos; to &apos;springbootOTP/src/main/java/com.zeedlabs.login.service&apos;&#x0D;&#x0A;- Original project: &apos;loginPractice&apos;&#x0D;&#x0A;- Destination element: &apos;springbootOTP/src/main/java/com.zeedlabs.login.service&apos;&#x0D;&#x0A;- Original element: &apos;com.zeedlabs.login.service.UserServices.java&apos;" description="Copy compilation unit" destination="=springbootOTP/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.zeedlabs.login.service" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.zeedlabs.login.service{UserServices.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1624778498618" units="1" version="1.0"/>
+</session>

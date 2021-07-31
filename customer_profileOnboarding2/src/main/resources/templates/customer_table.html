@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Customers List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<div>
+			<h1>Customers List</h1>
+		</div>
+		
+		<div class="p-2">
+			<a class="h2" th:href="@{/register}">Create New User</a>
+		</div>
+		
+
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Phone Number</th>
+						<th>Residential Address</th>
+					    <th>State Of Origin</th>
+					    <th>State Of Residence</th>
+					    <th>Gender</th>
+						<th>Married</th>
+						<th>email</th>
+						
+							<th>BVN Number</th>						    
+						    <th>Enlistment Date</th>
+							<th>Designation</th>
+							<th>IPPIS Number</th>
+							
+							<th>Terms</th>
+						<th>Mailing</th>
+						    					
+						<th></th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="user : ${listCustomers}">
+
+						<tr>
+							<td>[[${user.id}]]</td>
+							<td>[[${user.firstname}]]</td>
+							<td>[[${user.lastname}]]</td>
+							<td>[[${user.phonenumber}]]</td>
+						    <td>[[${user.address}]]</td>
+						    <td>[[${user.stateoforigin}]]</td>
+						    <td>[[${user.stateofresidence}]]</td>
+						    <td>[[${user.gender}]]</td>
+							<td>[[${user.married}]]</td>
+							<td>[[${user.email}]]</td>	
+													
+							<td>[[${user.bvnnumber}]]</td>						    
+						    <td>[[${user.enlistmentdate}]]</td>
+							<td>[[${user.designation}]]</td>
+							<td>[[${user.ippisnumber}]]</td>	
+							
+							<td>[[${user.terms}]]</td>
+							<td>[[${user.mailing}]]</td>
+												    
+						    							
+							<td><a th:href="@{'/user/edit/' +${user.id}}">Edit</a>
+								&nbsp; &nbsp; <a th:href="@{'/user/delete/' +${user.id}}">Delete</a>
+
+							</td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

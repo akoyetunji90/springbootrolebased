@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<div>
+			<h1>Loan Details</h1>
+		</div>
+		
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Staff Id</th>
+						<th>Account Number</th>
+						<th>Loan Amount</th>						
+						<th>Maturity Period</th>	
+							<th>Account Officer's Id</th>
+							<th>BVN Number</th>
+							<th>Product Name</th>
+						    <th>Repayment Type</th>
+						    <th>IPPIS Number</th>	
+						    <th>Terms</th>
+						    <th>Mailing</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="loan : ${listLoans}">
+
+						<tr>
+							<td>[[${loan.staffid}]]</td>
+							<td>[[${loan.accountnumber}]]</td>
+							<td>[[${loan.loanamount}]]</td>
+						    <td>[[${loan.maturationperiod}]]</td>	
+						    
+							<td>[[${loan.officersid}]]</td>
+							<td>[[${loan.bvnnumber}]]</td>
+							<td>[[${loan.productname}]]</td>
+						    <td>[[${loan.repaymenttype}]]</td>
+						    <td>[[${loan.ippisnumber}]]</td>
+						    <td>[[${loan.terms}]]</td>
+						    <td>[[${loan.mailing}]]</td>															
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

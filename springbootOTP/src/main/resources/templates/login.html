@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+	<script src="https://www.google.com/recaptha/api.js"></script>
+	<script src="js/recaptha.js"></script>
+<title>User Login</title>
+
+</head>
+<body>
+	<div class="container text-center">
+		<div>    
+			<h2 class="text-center">User Login</h2>
+		</div>
+		     
+		<div>
+			<a class="navbar-brand" href="#" th:href="@{/}">Back To Home Page</a>
+		</div>
+		<div th:if="${param.error}">   
+			<p class="text-danger"
+				th:utext="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></p>
+		</div>
+		<div th:if="${param.otp}">
+			    
+			<p class="text-danger">
+			    For security reason, we've sent an One-Time-Password (OTP)
+				to your email [[${param.email}]]<br />
+				Kindly check your email and use the provided OTP to login.<br />         
+				Note: The OTP will expire after 5 minutes.     
+			</p>
+		</div>
+		   
+		<div th:if="${param.logout}">   
+			<p class="text-warning">You have been logged out.</p>
+		</div>
+		 
+		<div th:if="${message != null}">
+			<p class="text-primary">[[${message}]]</p>
+		</div>
+		   
+	</div>
+	    
+	<div>
+		    
+		<form th:action="@{/login}" method="post"
+			style="max-width: 300px; margin: 0 auto;" id="loginForm">
+			<div class="border border-secondary rounded p-1">
+				    
+				<div>
+					        
+					<p>
+						 <input type="email" name="email" class="form-control"
+							placeholder="E-mail" th:value="${param.email}" required autofocus />       
+					
+						   <input type="password" name="password" class="form-control"
+							th:placeholder="${param.otp != null ? 'Your One Time Password' : 'Password'}"
+							required />   
+							
+		      <input type="checkbox" name="remember-me" />Remember me on this computer
+							      
+					</p>
+					        
+					<p class="text-center">
+						<button class="g-recaptha btn btn-success"
+							data-sitekey="6LczYY4bAAAAAESXf6xAhos58v23C0yqkF5osG-J"
+							data-callback="onSubmit" data-action="submit">Login</button>
+					</p>
+					    
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<!-- <div>
+		<script type="text/javascript"
+			th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+		<script type="text/javascript"
+			th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+	</div>
+ -->
+ 
+ </body>
+</html>

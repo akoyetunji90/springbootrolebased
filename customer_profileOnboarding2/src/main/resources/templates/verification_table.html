@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<div>
+			<h1>Loan Details</h1>
+		</div>
+		
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Date Of Enlistment</th>
+						<th>Age Limit</th>
+							<th>Net Pay</th>
+						    <th>Valid Id</th>
+						    <th>IPPIS Number</th>	
+						    <th>Loan Status</th>
+						    <th>Staff Id</th>						    
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="verify : ${listVerification}">
+
+						<tr>
+							<td>[[${verify.dateofenlistment}]]</td>
+							<td>[[${verify.agelimit}]]</td>
+							<td>[[${verify.netpay}]]</td>
+						    <td>[[${verify.valididtype}]]</td>	
+							<td>[[${verify.ippisnumber}]]</td>
+							<td>[[${verify.loanstatus}]]</td>
+							<td>[[${verify.officersid}]]</td>																						
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

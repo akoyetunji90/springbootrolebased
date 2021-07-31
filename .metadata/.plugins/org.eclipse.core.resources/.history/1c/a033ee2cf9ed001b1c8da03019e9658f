@@ -1,0 +1,29 @@
+package com.trustbanc.intranetservice.model;
+
+public class Loan {
+
+	private double loanamount = 60000;
+	private double annualinterestrate = 20;
+	private double monthlyinterestrate = annualinterestrate / 12;
+	private double monthlypayment = 1200;
+	private double newbalance;
+	private double totalinterestpaid;
+	private double interestpaid;
+	private double balance = loanamount;
+	private double principalpaid;
+
+	if(interestpaid>monthlypayment) {
+		System.out.println("This loan can never be paid off at these rates.");
+	}
+	else{
+		for (int month = 1; balance > 0; month++) {
+			interestpaid = monthlyinterestrate * balance;
+			principalpaid = monthlypayment - interestpaid;
+			newbalance = balance - principalpaid;
+			totalinterestpaid += interestpaid;
+
+			balance = newbalance;
+		}
+	}
+
+		}

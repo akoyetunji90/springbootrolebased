@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Success Page</title>
+
+<style type="text/css">
+span {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<div class="main-block">
+		<div>
+			<h1>You Have Registered Successfully</h1>
+		</div>
+
+		<fieldset>
+			<legend>Personal Details</legend>
+			<div>
+				<span>First Name: </span><span th:text="${officer.firstname}"></span><br />
+				<span>Last Name: </span><span th:text="${officer.lastname}"></span><br />
+				<span>BirthDate: </span><span th:text="${officer.birthdate}"></span><br />
+				<span>Street: </span><span th:text="${officer.street}"></span><br /> <span>Phone
+					Number: </span><span th:text="${officer.phonenumber}"></span><br />
+					 <span>City:</span><span th:text="${officer.city}"></span><br /> <span>Married?: </span><span
+					th:text="${officer.married}"></span><br /> <span>Gender?: </span><span
+					th:text="${officer.gender}"></span><br /> <span>State Of
+					Origin?: </span><span th:text="${officer.stateoforigin}"></span><br />
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Work Details</legend>
+			<div>
+				<span>Employment Date: </span><span th:text="${officer.employmentdate}"></span><br />
+				<span>Retirement Date: </span><span th:text="${officer.retirementdate}"></span><br />
+				<span>Designation: </span><span th:text="${officer.designation}"></span><br />
+
+			</div>
+		</fieldset>
+
+		<h3>
+			<a href="/user">Click here to view Customers</a>
+		</h3>
+		<br>
+
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan List</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container text-center">
+		<div>
+			<h1>Loan Details</h1>
+		</div>
+		
+		<div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Balance</th>
+						<th>Annual Interest Rate</th>
+						<th>Monthly Interest Rate</th>						
+						<th>Monthly Payment</th>	
+							<th>Interest Paid</th>
+							<th>Principal Paid</th>
+							<th>Total Interest Paid</th>
+						    <th>New Balance</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="cal : ${listCalculations}">
+
+						<tr>
+							<td>[[${cal.balance}]]</td>
+							<td>[[${cal.annualinterestrate}]]</td>
+							<td>[[${cal.monthlyinterestrate}]]</td>
+						    <td>[[${cal.monthlypayment}]]</td>	
+						    
+							<td>[[${cal.interestpaid}]]</td>
+							<td>[[${cal.principalpaid}]]</td>
+							<td>[[${cal.totalinterestpaid}]]</td>
+						    <td>[[${cal.newbalance}]]</td>
+						    						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

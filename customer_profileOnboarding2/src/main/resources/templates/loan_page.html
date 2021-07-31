@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Success Page</title>
+
+<style type="text/css">
+span {
+	display: inline-block;
+	width: 200px;
+	margin: 5px;
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<div class="main-block">
+		<div>
+			<h1>You Have Registered Successfully</h1>
+		</div>
+
+		<fieldset>
+			<legend>Personal Details</legend>
+			<div>
+				<span>Loan Amount: </span><span th:text="${loan.loanamount}"></span><br />
+				<span>Salary Account Number: </span><span th:text="${loan.accountnumber}"></span><br />
+				<span>Tenor:</span><span th:text="${loan.maturationperiod}"></span><br />
+				<span>Account Number: </span><span th:text="${loan.accountnumber}"></span><br />
+				<span>Account Officer's Id: </span><span th:text="${loan.officersid}"></span><br />
+				<span>Product Type: </span><span th:text="${loan.productname}"></span><br />
+				 <span>Repayment Type: </span><span th:text="${loan.repaymenttype}"></span><br />
+				 <span>IPPIS Number: </span><span th:text="${loan.ippisnumber}"></span><br />
+				 
+				
+			</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Terms And Mailing</legend>
+			<div>
+				<span>Terms And Condition: </span><span th:text="${loan.terms}"></span><br /> 
+				<span>Mailing:</span><span th:text="${loan.mailing}"></span><br />
+				
+
+			</div>
+		</fieldset>
+		
+
+				<h3>
+			<a href="/loan/table">Click here to view Your loan status</a>
+		</h3>
+		<br>
+
+
+	</div>
+</body>
+</html>

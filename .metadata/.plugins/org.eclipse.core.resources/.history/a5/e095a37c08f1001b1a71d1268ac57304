@@ -1,0 +1,5 @@
+spring.ldap.embedded.ldif=classpath:test-serverldif
+spring.ldap.embedded.base-dn=dc=springframewpork,dc=org
+spring.ldap.embedded.port=8389
+server.port=8080
+

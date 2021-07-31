@@ -1,0 +1,16 @@
+package com.zeedlabs.productmanager.crud.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.zeedlabs.productmanager.crud.entity.Duties;
+import com.zeedlabs.productmanager.crud.entity.Role;
+
+public interface RoleRepository extends JpaRepository<Duties, Long> {
+
+	
+	@Query
+	("SELECT r FROM Duties r WHERE r.name = ?1")
+	public Duties findByName(String name);
+	
+}
